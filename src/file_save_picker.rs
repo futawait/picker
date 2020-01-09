@@ -24,10 +24,16 @@ impl FileSavePicker {
         I: IntoIterator<Item = S>,
         S: AsRef<str>,
     {
-        for item in list {
+        for (n, item) in list.into_iter().enumerate() {
             let item = item.as_ref();
             self.filter = match &self.filter {
-                Some(filter) => Some(format!("{}{}", filter, item)),
+                Some(filter) => {
+                    if n == 0 {
+                        Some(format!("{};{}", filter, item))
+                    } else {
+                        Some(format!("{},{}", filter, item))
+                    }
+                }
                 None => Some(item.to_owned()),
             }
         }
