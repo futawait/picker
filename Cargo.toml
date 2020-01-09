@@ -1,0 +1,15 @@
+[package]
+name = "picker"
+version = "0.1.0"
+authors = ["futawait <57043008+futawait@users.noreply.github.com>"]
+edition = "2018"
+license = "MIT"
+description = "A cross-platform picker for access files and folders"
+homepage = "https://github.com/futawait/picker"
+documentation = "https://github.com/futawait/picker"
+repository = "https://github.com/futawait/picker"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+nativefiledialog-sys = "0.1.0"
