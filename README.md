@@ -11,7 +11,7 @@ Add `picker` as a dependency in your `Cargo.toml`:
 
 ```toml
 [dependencies]
-picker = "0.1.0"
+picker = "0.1.1"
 ```
 
 ## Example
@@ -22,12 +22,12 @@ Pick a single file:
 use picker::FileOpenPicker;
 
 fn main() {
-    if let Ok(result) = FileOpenPicker::new()
+    if let Ok(option) = FileOpenPicker::new()
         .file_type_filter(&["zip", "dmg"])
         .file_type_filter(&["png", "jpg"])
         .pick_single_file()
     {
-        if let Some(path) = result {
+        if let Some(path) = option {
             println!("Path is {}.", path);
         }
     }
